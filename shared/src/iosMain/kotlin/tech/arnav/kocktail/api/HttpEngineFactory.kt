@@ -1,16 +1,16 @@
 package tech.arnav.kocktail.api
 
-import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.darwin.Darwin
 
-actual class HttpClientFactory {
-    actual fun create(): HttpClient {
-        return HttpClient(Darwin.create {
+actual object HttpEngineFactory {
+    actual fun create(): HttpClientEngine {
+        return Darwin.create {
             configureRequest {
                 setAllowsCellularAccess(true)
                 setAllowsConstrainedNetworkAccess(true)
                 setAllowsExpensiveNetworkAccess(true)
             }
-        })
+        }
     }
 }
