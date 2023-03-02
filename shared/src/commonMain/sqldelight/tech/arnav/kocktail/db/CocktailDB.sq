@@ -1,0 +1,13 @@
+CREATE TABLE cocktails(
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    thumb TEXT,
+    instructions TEXT
+);
+
+insertDrink:
+INSERT INTO cocktails(id, name, thumb, instructions)
+VALUES(?,?,?,?);
+
+selectAllDrinks:
+SELECT * FROM cocktails;

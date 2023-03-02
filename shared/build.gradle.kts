@@ -46,7 +46,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
+                implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
                 implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
             }
         }
@@ -82,6 +82,14 @@ android {
     compileSdk = 33
     defaultConfig {
         minSdk = 26
-        targetSdk = 33
+    }
+}
+
+sqldelight {
+    databases {
+        create("CocktailDB") {
+            packageName.set("tech.arnav.kocktail.db")
+            schemaOutputDirectory.set(file("migrations"))
+        }
     }
 }
