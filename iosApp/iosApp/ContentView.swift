@@ -14,3 +14,9 @@ struct ContentView_Previews: PreviewProvider {
 		ContentView()
 	}
 }
+
+
+extension ContentView {
+    class ViewModel: ObservableObject {
+    }
+}

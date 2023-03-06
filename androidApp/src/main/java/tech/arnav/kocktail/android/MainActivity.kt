@@ -3,38 +3,21 @@ package tech.arnav.kocktail.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import tech.arnav.kocktail.Greeting
+import androidx.compose.foundation.lazy.LazyColumn
+import tech.arnav.kocktail.android.config.KocktailUIConfig
+import tech.arnav.kocktail.android.ui.GreetingView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    GreetingView(Greeting().greet())
-                }
+            KocktailUIConfig.Theme {
+                LazyColumn(content = {
+                    items(10) {
+                        GreetingView("Hello, Android!")
+                    }
+                })
             }
         }
-    }
-}
-
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
-
-@Preview
-@Composable
-fun DefaultPreview() {
-    MyApplicationTheme {
-        GreetingView("Hello, Android!")
     }
 }
