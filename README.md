@@ -48,7 +48,7 @@ class CocktailListViewModel : KMMViewModel() {
 ### iOS View 
 
 #### `CocktailItemRowView` - view to render each list item 
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```swift
@@ -73,10 +73,10 @@ struct CocktailItemRowView: View {
     }
 }
 ```
-</detail>
+</details>
 
 #### `CocktailListView` - view for rendering the list (or errors/loading)
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```swift
@@ -113,11 +113,11 @@ struct CocktailListView: View {
 }
 
 ```
-</detail>
+</details>
 
 #### `ContentView` - main screen of the app 
 
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```swift
@@ -131,14 +131,14 @@ struct ContentView: View {
 	}
 }
 ``` 
-</detail>
+</details>
 
 
 ### Android View 
 
 #### `CocktailItemRowView` - view to render each list item
 
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```kotlin
@@ -178,12 +178,12 @@ fun CocktailItemRowView(drink: Drink) {
     }
 }
 ```
-</detail>
+</details>
 
 #### `CocktailListView` - view for rendering the list (or errors/loading)
 > \* includes **Pull to Refresh** functionality
 
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```kotlin
@@ -241,11 +241,11 @@ fun CocktailListView(
     }
 }
 ```
-</detail>
+</details>
 
 #### `MainActivity` - main screen of the app
 
-<detail>
+<details>
 <summary>View Code</summary>
 
 ```kotlin
@@ -266,4 +266,4 @@ class MainActivity : ComponentActivity() {
 }
 
 ```
-</detail>
+</details>
