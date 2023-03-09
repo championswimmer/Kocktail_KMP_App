@@ -1,13 +1,16 @@
 import SwiftUI
 import shared
+import KMMViewModelSwiftUI
 
 struct ContentView: View {
-	@StateObject var viewModel = CocktailListViewModel()
+	@ObservedViewModel var viewModel = CocktailListViewModel()
 
 	let greet = Greeting().greet()
 
 	var body: some View {
-		Text(greet)
+		CocktailListView(state: viewModel.cocktailState, onRefresh: {
+			viewModel.updateCocktailList()
+		})
 	}
 }
 

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "KMMViewModel",
+        "repositoryURL": "https://github.com/rickclephas/KMM-ViewModel.git",
+        "state": {
+          "branch": null,
+          "revision": "ee4a96b11cab114d0abb43acddcb9edbc75f922c",
+          "version": "1.0.0-ALPHA-4"
+        }
+      },
+      {
         "package": "KMPNativeCoroutines",
         "repositoryURL": "https://github.com/rickclephas/KMP-NativeCoroutines.git",
         "state": {

@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
 fun MainActivityScreen(
     viewModel: CocktailListViewModel = viewModel()
 ) {
-    val state = viewModel.state.collectAsState()
+    val state = viewModel.cocktailState.collectAsState()
     CocktailListView(
         state = state.value,
         onRefresh = { viewModel.updateCocktailList() }
