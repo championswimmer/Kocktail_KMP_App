@@ -2,6 +2,8 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+	@StateObject var viewModel = CocktailListViewModel()
+
 	let greet = Greeting().greet()
 
 	var body: some View {
@@ -13,10 +15,4 @@ struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		ContentView()
 	}
-}
-
-
-extension ContentView {
-    class ViewModel: ObservableObject {
-    }
 }

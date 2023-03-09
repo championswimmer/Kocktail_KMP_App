@@ -37,7 +37,8 @@ fun CocktailItemRowView(drink: Drink) {
                         drink.strIngredient1,
                         drink.strIngredient2,
                         drink.strIngredient3
-                    ).joinToString(",") { it ?: "" }, Modifier.padding(12.dp),
+                    ).joinToString(",") { it ?: "" },
+                    Modifier.padding(12.dp),
                     style = KocktailUIConfig.typography().caption,
                 )
             }
@@ -54,6 +55,7 @@ fun CocktailItemRowView(drink: Drink) {
 @Composable
 fun CocktailRowPreview() {
     val drink = Drink(
+        idDrink = "123",
         strDrink = "Mojito",
         strCategory = "Cocktail",
         strIngredient1 = "Rum",

@@ -10,6 +10,7 @@ val ktorVersion =  "2.2.3"
 val sqlDelightVersion =  "2.0.0-alpha05"
 val dateTimeVersion =  "0.4.0"
 val viewModelVersion = "2.6.0"
+val kmmViewModelVersion = "1.0.0-ALPHA-4"
 
 kotlin {
     jvmToolchain(17)
@@ -39,6 +40,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
                 implementation("app.cash.sqldelight:runtime:$sqlDelightVersion")
+                implementation("com.rickclephas.kmm:kmm-viewmodel-core:$kmmViewModelVersion")
             }
         }
         val commonTest by getting {
