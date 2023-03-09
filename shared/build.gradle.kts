@@ -3,6 +3,8 @@ plugins {
     id("com.android.library")
     kotlin("plugin.serialization")
     id("app.cash.sqldelight")
+    id("com.google.devtools.ksp")
+    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 val coroutineVersion = "1.6.4"
@@ -33,6 +35,9 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+        }
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}")
@@ -52,9 +57,9 @@ kotlin {
             dependencies {
                 implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelVersion")
                 api("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelVersion")
+                api("com.rickclephas.kmm:kmm-viewmodel-core:$kmmViewModelVersion")
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
                 implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
-
             }
         }
         val androidUnitTest by getting

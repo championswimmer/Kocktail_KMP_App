@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,9 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		95121FD329BA470B004C82F9 /* CocktailItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95121FD229BA470B004C82F9 /* CocktailItemRowView.swift */; };
+		95121FDF29BA5E4B004C82F9 /* KMPNativeCoroutinesCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 95121FDE29BA5E4B004C82F9 /* KMPNativeCoroutinesCombine */; };
+		95121FE129BA5E4B004C82F9 /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = 95121FE029BA5E4B004C82F9 /* KMPNativeCoroutinesCore */; };
 		FF50030869CEA55CBA67005D /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF500A5C53240741CEAF735D /* CocktailListViewModel.swift */; };
-		FF500CF23B9F0F37B1D0AEBB /* collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5009D75F564EB328B5DC72 /* collect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,7 +38,6 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95121FD229BA470B004C82F9 /* CocktailItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailItemRowView.swift; sourceTree = "<group>"; };
-		FF5009D75F564EB328B5DC72 /* collect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collect.swift; sourceTree = "<group>"; };
 		FF500A5C53240741CEAF735D /* CocktailListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95121FE129BA5E4B004C82F9 /* KMPNativeCoroutinesCore in Frameworks */,
+				95121FDF29BA5E4B004C82F9 /* KMPNativeCoroutinesCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,6 @@
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				FF500E0AFD77D7843B340F0F /* viewmodels */,
-				FF500E72513D84DB2BDFD2AB /* flows */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -115,14 +116,6 @@
 			path = viewmodels;
 			sourceTree = "<group>";
 		};
-		FF500E72513D84DB2BDFD2AB /* flows */ = {
-			isa = PBXGroup;
-			children = (
-				FF5009D75F564EB328B5DC72 /* collect.swift */,
-			);
-			path = flows;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +134,10 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				95121FDE29BA5E4B004C82F9 /* KMPNativeCoroutinesCombine */,
+				95121FE029BA5E4B004C82F9 /* KMPNativeCoroutinesCore */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				95121FDD29BA5E4B004C82F9 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,7 +219,6 @@
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				95121FD329BA470B004C82F9 /* CocktailItemRowView.swift in Sources */,
 				FF50030869CEA55CBA67005D /* CocktailListViewModel.swift in Sources */,
-				FF500CF23B9F0F37B1D0AEBB /* collect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +421,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95121FDD29BA5E4B004C82F9 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rickclephas/KMP-NativeCoroutines.git";
+			requirement = {
+				kind = exactVersion;
+				version = "1.0.0-ALPHA-5";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95121FDE29BA5E4B004C82F9 /* KMPNativeCoroutinesCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95121FDD29BA5E4B004C82F9 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCombine;
+		};
+		95121FE029BA5E4B004C82F9 /* KMPNativeCoroutinesCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95121FDD29BA5E4B004C82F9 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

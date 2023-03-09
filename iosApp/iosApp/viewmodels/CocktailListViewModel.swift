@@ -10,14 +10,8 @@ class CocktailListViewModel : ObservableObject {
 
     @Published var state: shared.CocktailListState
 
-    init() {
-        _viewModel.state.collect(
-                collector: collect(
-                        onCollect: { [weak self] state in
-                            self?.state = state
-                        }
-                )
-        ) { (error: Error?) in error }
+    init () {
+        state = _viewModel.state.value as! shared.CocktailListState
     }
 
 }
