@@ -32,7 +32,8 @@ struct CocktailItemRowView: View {
 
 struct CocktailItemRowView_Previews: PreviewProvider {
     static var previews: some View {
-        let drink = Drink(idDrink: "123", strDrink: "Mojito", strDrinkAlternate: "", strTags: "", strVideo: "", strCategory: "Cocktail", strIBA: "", strAlcoholic: "", strGlass: "", strInstructions: "", strDrinkThumb: "", strIngredient1: "Vodka", strIngredient2: "Gin", strIngredient3: "Lime", strIngredient4: "", strIngredient5: "", strIngredient6: "", strIngredient7: "", strIngredient8: "", strMeasure1: "", strMeasure2: "", strMeasure3: "", strMeasure4: "", strMeasure5: "", strMeasure6: "", strMeasure7: "", strMeasure8: "", strImageSource: "", strImageAttribution: "", strCreativeCommonsConfirmed: "", dateModified: "")
+        let previewProviders = PreviewProviders()
+        let drink = previewProviders.drinksProvider.valuesAsArray.get(index: 0)!
         CocktailItemRowView(drink: drink)
     }
 }

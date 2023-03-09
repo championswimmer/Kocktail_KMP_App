@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import tech.arnav.kocktail.android.config.KocktailUIConfig
 import tech.arnav.kocktail.api.Drink
@@ -50,21 +51,13 @@ fun CocktailItemRowView(drink: Drink) {
     }
 }
 
-
 @Preview
 @Composable
-fun CocktailRowPreview() {
-    val drink = Drink(
-        idDrink = "123",
-        strDrink = "Mojito",
-        strCategory = "Cocktail",
-        strIngredient1 = "Rum",
-        strIngredient2 = "Lime",
-        strIngredient3 = "Sugar",
-    )
+fun CocktailRowPreview(
+    @PreviewParameter(PreviewDrinksProvider::class) drink: Drink
+) {
     KocktailUIConfig.Theme {
         Column {
-            CocktailItemRowView(drink)
             CocktailItemRowView(drink)
             CocktailItemRowView(drink)
         }

@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterialApi::class)
+
 package tech.arnav.kocktail.android.ui
 
 import androidx.compose.foundation.layout.Box
@@ -14,6 +16,8 @@ import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import tech.arnav.kocktail.states.CocktailListState
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -47,7 +51,10 @@ fun CocktailListView(
             }
 
             is CocktailListState.Error -> {
-                Text(text = "Error: ${state.error.message}")
+                Text(
+                    modifier = Modifier.align(Alignment.Center),
+                    text = "Error: ${state.error.message}"
+                )
             }
 
             CocktailListState.Loading -> {
@@ -68,4 +75,15 @@ fun CocktailListView(
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun CocktailListViewPreview(
+    @PreviewParameter(PreviewCocktailListProvider::class) state: CocktailListState
+) {
+    CocktailListView(
+        state = state,
+        onRefresh = { }
+    )
 }

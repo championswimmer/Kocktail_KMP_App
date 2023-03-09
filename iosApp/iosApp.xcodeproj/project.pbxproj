@@ -17,6 +17,7 @@
 		95E252C229BA6332006695CA /* KMMViewModelCore in Frameworks */ = {isa = PBXBuildFile; productRef = 95E252C129BA6332006695CA /* KMMViewModelCore */; };
 		95E252C429BA6332006695CA /* KMMViewModelSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95E252C329BA6332006695CA /* KMMViewModelSwiftUI */; };
 		95E252C629BA6822006695CA /* CocktailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E252C529BA6822006695CA /* CocktailListView.swift */; };
+		95E7CF1D29BA88B800473A3C /* PreviewProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7CF1C29BA88B800473A3C /* PreviewProviders.swift */; };
 		FF500E881DF3BC54A40D27FF /* KMMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF500A1BF0A61CF5060078F2 /* KMMViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95121FD229BA470B004C82F9 /* CocktailItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailItemRowView.swift; sourceTree = "<group>"; };
 		95E252C529BA6822006695CA /* CocktailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListView.swift; sourceTree = "<group>"; };
+		95E7CF1C29BA88B800473A3C /* PreviewProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProviders.swift; sourceTree = "<group>"; };
 		FF500A1BF0A61CF5060078F2 /* KMMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMMViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			children = (
 				95121FD229BA470B004C82F9 /* CocktailItemRowView.swift */,
 				95E252C529BA6822006695CA /* CocktailListView.swift */,
+				95E7CF1C29BA88B800473A3C /* PreviewProviders.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				95E252C629BA6822006695CA /* CocktailListView.swift in Sources */,
 				95121FD329BA470B004C82F9 /* CocktailItemRowView.swift in Sources */,
 				FF500E881DF3BC54A40D27FF /* KMMViewModel.swift in Sources */,
+				95E7CF1D29BA88B800473A3C /* PreviewProviders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

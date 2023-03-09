@@ -41,8 +41,18 @@ struct CocktailListView: View {
     }
 }
 
-//struct CocktailListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CocktailListView()
-//    }
-//}
+struct CocktailListView_Previews: PreviewProvider {
+    static var previews: some View {
+        let states = PreviewProviders().cocktailListProvider.valuesAsArray
+        Group {
+            CocktailListView(
+                state: states.get(index: 0)!, onRefresh: {})
+            CocktailListView(
+                state: states.get(index: 1)!, onRefresh: {})
+            CocktailListView(
+                state: states.get(index: 2)!, onRefresh: {})
+            CocktailListView(
+                state: states.get(index: 3)!, onRefresh: {})
+        }
+    }
+}
