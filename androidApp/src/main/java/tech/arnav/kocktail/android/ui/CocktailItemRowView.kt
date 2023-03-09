@@ -9,14 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import tech.arnav.kocktail.android.config.KocktailUIConfig
 import tech.arnav.kocktail.api.Drink
 
 @Composable
-fun CocktailRow(drink: Drink) {
+fun CocktailItemRowView(drink: Drink) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -63,9 +62,9 @@ fun CocktailRowPreview() {
     )
     KocktailUIConfig.Theme {
         Column {
-            CocktailRow(drink)
-            CocktailRow(drink)
-            CocktailRow(drink)
+            CocktailItemRowView(drink)
+            CocktailItemRowView(drink)
+            CocktailItemRowView(drink)
         }
     }
 

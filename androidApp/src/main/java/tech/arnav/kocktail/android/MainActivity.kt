@@ -1,23 +1,36 @@
+@file:OptIn(ExperimentalMaterialApi::class)
+
 package tech.arnav.kocktail.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.viewmodel.compose.viewModel
 import tech.arnav.kocktail.android.config.KocktailUIConfig
-import tech.arnav.kocktail.android.ui.GreetingView
+import tech.arnav.kocktail.android.ui.CocktailListView
+import tech.arnav.kocktail.viewmodel.CocktailListViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             KocktailUIConfig.Theme {
-                LazyColumn(content = {
-                    items(10) {
-                        GreetingView("Hello, Android!")
-                    }
-                })
+                MainActivityScreen()
             }
         }
     }
+}
+
+@Composable
+fun MainActivityScreen(
+    viewModel: CocktailListViewModel = viewModel()
+) {
+    val state = viewModel.state.collectAsState()
+    CocktailListView(
+        state = state.value,
+        onRefresh = { viewModel.updateCocktailList() }
+    )
 }

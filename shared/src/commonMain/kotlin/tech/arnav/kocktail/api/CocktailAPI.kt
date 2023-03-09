@@ -19,7 +19,7 @@ class CocktailAPI {
 
     suspend fun getCocktails(): CocktailResponse {
         val response =
-            client.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail")
+            client.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=martini")
         if (response.status.value != 200) {
             throw RuntimeException("Error fetching cocktails")
         }
